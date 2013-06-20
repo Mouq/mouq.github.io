@@ -1,0 +1,126 @@
+body {
+    background-color: #D9D9DB;
+}
+#content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    visibility: visible;
+    overflow: none;
+}
+#me {
+    font-family: 'Lato', sans-serif;
+    font-style: italic;
+    font-size: 4em;
+    text-align: center;
+
+    position: absolute;
+    height: 1.5em;
+    width: 7em;
+    top: -0.75em;
+    left: 50%;
+    margin-left: -3.5em;
+}
+#orbit {
+    position: absolute;
+    height: 1.5em;
+    width: 30em;
+    top: -0.75em;
+    left: 50%;
+    margin-left: -15em;
+    animation-name: rotateclock;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: rotateclock;
+    -webkit-animation-duration: 15s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -ms-animation-name: rotateclock;
+    -ms-animation-duration: 15s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+#comet {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    background-color: #5C5CAD;
+    animation-name: rotateclock;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: rotateclock;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -ms-animation-name: rotateclock;
+    -ms-animation-duration: 7s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+#tail1 {
+    height: 0.4em;
+    width: 0.4em;
+    top: 1.1em;
+    left: 0.8em;
+}
+#tail2 {
+    height: 0.1em;
+    width: 0.1em;
+    top: 3.0em;
+    left: 0.9em;
+}
+#tail3 {
+    height: 0.2em;
+    width: 0.2em;
+    top: 2.3em;
+    left: 0.4em;
+}
+#tail4 {
+    height: 0.3em;
+    width: 0.3em;
+    top: 1.6em;
+    left: 0.2em;
+}
+#tail5 {
+    height: 0.2em;
+    width: 0.2em;
+    top: 1.9em;
+    left: 1.0em;
+}
+#tail6 {
+    height: 0.2em;
+    width: 0.2em;
+    top: 2.5em;
+    left: 0.9em;
+}
+.tail {
+    border: solid 0px; 
+    position: absolute;
+    background-color: #5E5CAD;
+    animation-name: rotateclock;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    -webkit-animation-name: rotateclock;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+    -ms-animation-name: rotateclock;
+    -ms-animation-duration: 1s;
+    -ms-animation-iteration-count: infinite;
+    -ms-animation-timing-function: linear;
+}
+@keyframes rotateclock {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+@-webkit-keyframes rotateclock {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+@-ms-keyframes rotateclock {
+    0% { -ms-transform: rotate(0deg); }
+    100% { -ms-transform: rotate(360deg); }
+}
