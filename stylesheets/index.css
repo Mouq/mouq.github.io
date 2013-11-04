@@ -1,6 +1,17 @@
 body {
     background-color: #D9D9DB;
 }
+a { color: inherit; text-decoration: none }
+small { font-size: 0.4em; }
+ms { /* more-small */
+    font-size: 0.5em;
+    letter-spacing: -0.1em;
+    vertical-align: middle;
+    text-decoration: underline;
+}
+#me small { color: grey; }
+#me small a { font-weight: 400; }
+#me small a:hover { color: black; }
 #content {
     position: absolute;
     top: 50%;
@@ -11,6 +22,7 @@ body {
 #me {
     font-family: 'Lato', sans-serif;
     font-style: italic;
+    font-weight: 300;
     font-size: 4em;
     text-align: center;
 
