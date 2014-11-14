@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Slangs Today</title>
+  <meta charset="UTF-8">
+  <style>
+    /* code gets the browser-default font
+     * kbd gets a slightly less common monospace font
+     * samp gets the hard pixelly fonts
+     */
+    kbd { font-family: "Droid Sans Mono", "Luxi Mono", "Inconsolata", monospace }
+    samp { font-family: "Terminus", "Courier", "Lucida Console", monospace }
+    /* WHATWG HTML frowns on the use of <u> because it looks like a link,
+     * so we make it not look like one.
+     */
+    u { text-decoration: none }
+    .nested {
+        margin-left: 3em;
+    }
+    // footnote things:
+    aside, u { opacity: 0.7 }
+    a[id^="fn-"]:target { background: #ff0 }
+  </style>
+  <link rel="stylesheet" href="slangs_files/perl.css">
+  
+  <link rel="icon" href="http://127.0.0.1:3000/favicon.ico" type="favicon.ico">
+<link rel="stylesheet" type="text/css" href="slangs_files/style.css" media="screen" title="default">
+<link type="text/css" href="slangs_files/jquery-ui-1.css" rel="stylesheet">
+<script type="text/javascript" src="slangs_files/jquery-1.js"></script>
+<script type="text/javascript" src="slangs_files/jquery-ui-1.js"></script>
+<script type="text/javascript" src="slangs_files/search.js"></script>
+
+<style class="firebugResetStyles" type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+/** reset styling **/
+.firebugResetStyles {
+    z-index: 2147483646 !important;
+    top: 0 !important;
+    left: 0 !important;
+    display: block !important;
+    border: 0 none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    outline: 0 !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    position: fixed !important;
+    transform: rotate(0deg) !important;
+    transform-origin: 50% 50% !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background: transparent none !important;
+    pointer-events: none !important;
+    white-space: normal !important;
+}
+style.firebugResetStyles {
+    display: none !important;
+}
+
+.firebugBlockBackgroundColor {
+    background-color: transparent !important;
+}
+
+.firebugResetStyles:before, .firebugResetStyles:after {
+    content: "" !important;
+}
+/**actual styling to be modified by firebug theme**/
+.firebugCanvas {
+    display: none !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    width: auto !important;
+    position: static !important;
+}
+
+.firebugLayoutBoxOffset {
+    opacity: 0.8 !important;
+    position: fixed !important;
+}
+
+.firebugLayoutLine {
+    opacity: 0.4 !important;
+    background-color: #000000 !important;
+}
+
+.firebugLayoutLineLeft, .firebugLayoutLineRight {
+    width: 1px !important;
+    height: 100% !important;
+}
+
+.firebugLayoutLineTop, .firebugLayoutLineBottom {
+    width: 100% !important;
+    height: 1px !important;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px !important;
+    border-top: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999 !important;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px !important;
+    border-left: 1px solid #999999 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBoxParent {
+    border-top: 0 none !important;
+    border-right: 1px dashed #E00 !important;
+    border-bottom: 1px dashed #E00 !important;
+    border-left: 0 none !important;
+    position: fixed !important;
+    width: auto !important;
+}
+
+.firebugRuler{
+    position: absolute !important;
+}
+
+.firebugRulerH {
+    top: -15px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 14px !important;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%13%88%00%00%00%0E%08%02%00%00%00L%25a%0A%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%04%F8IDATx%DA%EC%DD%D1n%E2%3A%00E%D1%80%F8%FF%EF%E2%AF2%95%D0D4%0E%C1%14%B0%8Fa-%E9%3E%CC%9C%87n%B9%81%A6W0%1C%A6i%9A%E7y%0As8%1CT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AATE9%FE%FCw%3E%9F%AF%2B%2F%BA%97%FDT%1D~K(%5C%9D%D5%EA%1B%5C%86%B5%A9%BDU%B5y%80%ED%AB*%03%FAV9%AB%E1%CEj%E7%82%EF%FB%18%BC%AEJ8%AB%FA'%D2%BEU9%D7U%ECc0%E1%A2r%5DynwVi%CFW%7F%BB%17%7Dy%EACU%CD%0E%F0%FA%3BX%FEbV%FEM%9B%2B%AD%BE%AA%E5%95v%AB%AA%E3E5%DCu%15rV9%07%B5%7F%B5w%FCm%BA%BE%AA%FBY%3D%14%F0%EE%C7%60%0EU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5JU%88%D3%F5%1F%AE%DF%3B%1B%F2%3E%DAUCNa%F92%D02%AC%7Dm%F9%3A%D4%F2%8B6%AE*%BF%5C%C2Ym~9g5%D0Y%95%17%7C%C8c%B0%7C%18%26%9CU%CD%13i%F7%AA%90%B3Z%7D%95%B4%C7%60%E6E%B5%BC%05%B4%FBY%95U%9E%DB%FD%1C%FC%E0%9F%83%7F%BE%17%7DkjMU%E3%03%AC%7CWj%DF%83%9An%BCG%AE%F1%95%96yQ%0Dq%5Dy%00%3Et%B5'%FC6%5DS%95pV%95%01%81%FF'%07%00%00%00%00%00%00%00%00%00%F8x%C7%F0%BE%9COp%5D%C9%7C%AD%E7%E6%EBV%FB%1E%E0(%07%E5%AC%C6%3A%ABi%9C%8F%C6%0E9%AB%C0'%D2%8E%9F%F99%D0E%B5%99%14%F5%0D%CD%7F%24%C6%DEH%B8%E9rV%DFs%DB%D0%F7%00k%FE%1D%84%84%83J%B8%E3%BA%FB%EF%20%84%1C%D7%AD%B0%8E%D7U%C8Y%05%1E%D4t%EF%AD%95Q%BF8w%BF%E9%0A%BF%EB%03%00%00%00%00%00%00%00%00%00%B8vJ%8E%BB%F5%B1u%8Cx%80%E1o%5E%CA9%AB%CB%CB%8E%03%DF%1D%B7T%25%9C%D5(%EFJM8%AB%CC'%D2%B2*%A4s%E7c6%FB%3E%FA%A2%1E%80~%0E%3E%DA%10x%5D%95Uig%15u%15%ED%7C%14%B6%87%A1%3B%FCo8%A8%D8o%D3%ADO%01%EDx%83%1A~%1B%9FpP%A3%DC%C6'%9C%95gK%00%00%00%00%00%00%00%00%00%20%D9%C9%11%D0%C0%40%AF%3F%EE%EE%92%94%D6%16X%B5%BCMH%15%2F%BF%D4%A7%C87%F1%8E%F2%81%AE%AAvzr%DA2%ABV%17%7C%E63%83%E7I%DC%C6%0Bs%1B%EF6%1E%00%00%00%00%00%00%00%00%00%80cr%9CW%FF%7F%C6%01%0E%F1%CE%A5%84%B3%CA%BC%E0%CB%AA%84%CE%F9%BF)%EC%13%08WU%AE%AB%B1%AE%2BO%EC%8E%CBYe%FE%8CN%ABr%5Dy%60~%CFA%0D%F4%AE%D4%BE%C75%CA%EDVB%EA(%B7%F1%09g%E5%D9%12%00%00%00%00%00%00%00%00%00H%F6%EB%13S%E7y%5E%5E%FB%98%F0%22%D1%B2'%A7%F0%92%B1%BC%24z3%AC%7Dm%60%D5%92%B4%7CEUO%5E%F0%AA*%3BU%B9%AE%3E%A0j%94%07%A0%C7%A0%AB%FD%B5%3F%A0%F7%03T%3Dy%D7%F7%D6%D4%C0%AAU%D2%E6%DFt%3F%A8%CC%AA%F2%86%B9%D7%F5%1F%18%E6%01%F8%CC%D5%9E%F0%F3z%88%AA%90%EF%20%00%00%00%00%00%00%00%00%00%C0%A6%D3%EA%CFi%AFb%2C%7BB%0A%2B%C3%1A%D7%06V%D5%07%A8r%5D%3D%D9%A6%CAu%F5%25%CF%A2%99%97zNX%60%95%AB%5DUZ%D5%FBR%03%AB%1C%D4k%9F%3F%BB%5C%FF%81a%AE%AB'%7F%F3%EA%FE%F3z%94%AA%D8%DF%5B%01%00%00%00%00%00%00%00%00%00%8E%FB%F3%F2%B1%1B%8DWU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*UiU%C7%BBe%E7%F3%B9%CB%AAJ%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5*%AAj%FD%C6%D4%5Eo%90%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5%86%AF%1B%9F%98%DA%EBm%BBV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%AD%D6%E4%F58%01%00%00%00%00%00%00%00%00%00%00%00%00%00%40%85%7F%02%0C%008%C2%D0H%16j%8FX%00%00%00%00IEND%AEB%60%82") repeat-x !important;
+    border-top: 1px solid #BBBBBB !important;
+    border-right: 1px dashed #BBBBBB !important;
+    border-bottom: 1px solid #000000 !important;
+}
+
+.firebugRulerV {
+    top: 0 !important;
+    left: -15px !important;
+    width: 14px !important;
+    height: 100% !important;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%0E%00%00%13%88%08%02%00%00%00%0E%F5%CB%10%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%06~IDATx%DA%EC%DD%D1v%A20%14%40Qt%F1%FF%FF%E4%97%D9%07%3BT%19%92%DC%40(%90%EEy%9A5%CB%B6%E8%F6%9Ac%A4%CC0%84%FF%DC%9E%CF%E7%E3%F1%88%DE4%F8%5D%C7%9F%2F%BA%DD%5E%7FI%7D%F18%DDn%BA%C5%FB%DF%97%BFk%F2%10%FF%FD%B4%F2M%A7%FB%FD%FD%B3%22%07p%8F%3F%AE%E3%F4S%8A%8F%40%EEq%9D%BE8D%F0%0EY%A1Uq%B7%EA%1F%81%88V%E8X%3F%B4%CEy%B7h%D1%A2E%EBohU%FC%D9%AF2fO%8BBeD%BE%F7X%0C%97%A4%D6b7%2Ck%A5%12%E3%9B%60v%B7r%C7%1AI%8C%BD%2B%23r%00c0%B2v%9B%AD%CA%26%0C%1Ek%05A%FD%93%D0%2B%A1u%8B%16-%95q%5Ce%DCSO%8E%E4M%23%8B%F7%C2%FE%40%BB%BD%8C%FC%8A%B5V%EBu%40%F9%3B%A72%FA%AE%8C%D4%01%CC%B5%DA%13%9CB%AB%E2I%18%24%B0n%A9%0CZ*Ce%9C%A22%8E%D8NJ%1E%EB%FF%8F%AE%CAP%19*%C3%BAEKe%AC%D1%AAX%8C*%DEH%8F%C5W%A1e%AD%D4%B7%5C%5B%19%C5%DB%0D%EF%9F%19%1D%7B%5E%86%BD%0C%95%A12%AC%5B*%83%96%CAP%19%F62T%86%CAP%19*%83%96%CA%B8Xe%BC%FE)T%19%A1%17xg%7F%DA%CBP%19*%C3%BA%A52T%86%CAP%19%F62T%86%CA%B0n%A9%0CZ%1DV%C6%3D%F3%FCH%DE%B4%B8~%7F%5CZc%F1%D6%1F%AF%84%F9%0F6%E6%EBVt9%0E~%BEr%AF%23%B0%97%A12T%86%CAP%19%B4T%86%CA%B8Re%D8%CBP%19*%C3%BA%A52huX%19%AE%CA%E5%BC%0C%7B%19*CeX%B7h%A9%0C%95%E1%BC%0C%7B%19*CeX%B7T%06%AD%CB%5E%95%2B%BF.%8F%C5%97%D5%E4%7B%EE%82%D6%FB%CF-%9C%FD%B9%CF%3By%7B%19%F62T%86%CA%B0n%D1R%19*%A3%D3%CA%B0%97%A12T%86uKe%D0%EA%B02*%3F1%99%5DB%2B%A4%B5%F8%3A%7C%BA%2B%8Co%7D%5C%EDe%A8%0C%95a%DDR%19%B4T%C66%82fA%B2%ED%DA%9FC%FC%17GZ%06%C9%E1%B3%E5%2C%1A%9FoiB%EB%96%CA%A0%D5qe4%7B%7D%FD%85%F7%5B%ED_%E0s%07%F0k%951%ECr%0D%B5C%D7-g%D1%A8%0C%EB%96%CA%A0%A52T%C6)*%C3%5E%86%CAP%19%D6-%95A%EB*%95q%F8%BB%E3%F9%AB%F6%E21%ACZ%B7%22%B7%9B%3F%02%85%CB%A2%5B%B7%BA%5E%B7%9C%97%E1%BC%0C%EB%16-%95%A12z%AC%0C%BFc%A22T%86uKe%D0%EA%B02V%DD%AD%8A%2B%8CWhe%5E%AF%CF%F5%3B%26%CE%CBh%5C%19%CE%CB%B0%F3%A4%095%A1%CAP%19*Ce%A8%0C%3BO*Ce%A8%0C%95%A12%3A%AD%8C%0A%82%7B%F0v%1F%2FD%A9%5B%9F%EE%EA%26%AF%03%CA%DF9%7B%19*Ce%A8%0C%95%A12T%86%CA%B8Ze%D8%CBP%19*Ce%A8%0C%95%D1ae%EC%F7%89I%E1%B4%D7M%D7P%8BjU%5C%BB%3E%F2%20%D8%CBP%19*Ce%A8%0C%95%A12T%C6%D5*%C3%5E%86%CAP%19*Ce%B4O%07%7B%F0W%7Bw%1C%7C%1A%8C%B3%3B%D1%EE%AA%5C%D6-%EBV%83%80%5E%D0%CA%10%5CU%2BD%E07YU%86%CAP%19*%E3%9A%95%91%D9%A0%C8%AD%5B%EDv%9E%82%FFKOee%E4%8FUe%A8%0C%95%A12T%C6%1F%A9%8C%C8%3D%5B%A5%15%FD%14%22r%E7B%9F%17l%F8%BF%ED%EAf%2B%7F%CF%ECe%D8%CBP%19*Ce%A8%0C%95%E1%93~%7B%19%F62T%86%CAP%19*Ce%A8%0C%E7%13%DA%CBP%19*Ce%A8%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4%AE%A4%F5%25%C0%00%DE%BF%5C'%0F%DA%B8q%00%00%00%00IEND%AEB%60%82") repeat-y !important;
+    border-left: 1px solid #BBBBBB !important;
+    border-right: 1px solid #000000 !important;
+    border-bottom: 1px dashed #BBBBBB !important;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0 !important;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0 !important;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.fbProxyElement {
+    position: fixed !important;
+    pointer-events: auto !important;
+}
+</style></head>
+<body class="pod" id="___top">
+<div id="header" class="pretty-box green">
+    <a href="http://127.0.0.1:3000/"><img src="slangs_files/camelia-small.png" alt="Camelia" id="logo">&nbsp;Perl 6 Documentation</a>
+    <div style="display: none;" id="search" class="ui-widget">
+        <div class="green"><input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" class="ui-autocomplete-input" placeholder="Search" id="query" title="Enter Perl 6 document to search for"></div>
+    </div>
+    
+        <div class="menu">
+  <div style="text-align: left; margin-left: 3em; font-style: italic">
+  <p>By Alexander Moquin, for ENG 30T/001H, taught by Drs. Rose and Feinstein.</p>
+  <p>This document is written and formatted as an actual document from 
+the Perl 6 documentation, written for Perl 6 users or those experienced 
+with Perl 6.</p>
+  </div>
+</div>
+    
+</div>
+<div id="content-wrapper">
+<div id="content" class="pretty-box yellow">
+
+
+<h1 class="title">Slangs Today</h1>
+<p class="subtitle">Language tweaks and DSLs in Perl 6</p>
+<nav class="indexgroup">
+<ol class="indexList indexList1">
+  <li class="indexItem indexItem1"><a href="#v5">v5</a></li>
+  <li class="indexItem indexItem1"><a href="#%26EXPORT_and_the_language_braid"><span name="sub EXPORT variable %*MAIN variable $*LANG"><code>&amp;EXPORT</code> and the language braid</span></a></li>
+  <li class="indexItem indexItem1"><a href="#Slang_Grammars">Slang Grammars</a></li>
+  <li class="indexItem indexItem1"><a href="#Slang_Actions">Slang Actions</a></li>
+  <ol class="indexList indexList2">
+    <li class="indexItem indexItem2"><a href="#Cargo-culting_an_Actions_Class">Cargo-culting an Actions Class</a></li>
+  </ol>
+</ol>
+</nav>
+<p>Change in language is inevitable, and often good. If you spend a lot 
+of time analyzing literature, for example, the terms you use change to 
+better represent your ideas. Similarly, if you have to spend a long time
+ carefully doing finances, mathematical language makes the details of 
+calculations clearer than if they were written in English. Perl 6 has a 
+similar approach, letting you code in a way that makes more sense based 
+on what you’re doing, and then being able to switch back out to vanilla 
+Perl 6. These switches, referred to as “slangs”, can either be into 
+modified version of Perl 6. While the general interface for making and 
+interacting with slangs is still being developed, slangs can still be 
+created today by those adventurous enough.</p>
+<h1 id="v5"><a class="u" href="#___top" title="go to top of document">v5</a></h1>
+<p>2013 saw the creation of the first Perl 6 slang: <a href="https://github.com/rakudo-p5/v5">v5</a>,
+ an ambitious project by Tobias Leich, A.K.A., FROGGS, that has been the
+ major catalyst for slang development. It implemented switching from <a href="http://perl6.org/">Perl version 6</a>, to <a href="http://perl.org/">version 5</a>, and back, as has been long demanded by <a href="http://perlcabal.org/syn/S01.html#Random_Thoughts">Synopsis 1</a>. It works something like this:</p>
+<pre><strong>use v6;</strong>
+# ...some Perl 6 code…
+<a href="http://doc.perl6.org/routine/sub">sub</a> concat1 (Str $s1, Str $s2) { $s1 ~ $s2 }
+{
+    <strong>use v5;</strong>
+    # ...some Perl 5 code…
+    sub concat2 {
+        my ($s1, $s2) = @_;
+        $s1 . $s2;
+    }
+    {
+        <strong>use v6;</strong>
+        # ...more Perl 6 code…
+        say concat1 “Hel”, “lo ”;
+        say concat2 “Wor”, “ld!”;
+    }
+}
+</pre>
+<p>Originally, v5 had to be implemented in <a href="https://github.com/perl6/nqp/blob/master/README.pod">NQP</a>, the low-level subset of Perl 6 that Rakudo’s parser is implemented in. Nowadays, slangs can be written in Perl 6, as <a href="https://github.com/rakudo-p5/v5/blob/nqp_to_perl6/src/Perl5/Grammar.pm">v5 is now</a>, although there are some difficulties that must be overcome when crossing between the NQP/Perl 6 object spaces.</p>
+<p>Like the Perl 6 parser itself, slangs are implemented using the principles of Perl 6 grammars. See <a href="http://127.0.0.1:3000/language/grammars">/language/grammars</a> for more details.</p>
+<h1 id="&amp;EXPORT_and_the_language_braid"><a class="u" href="#___top" title="go to top of document"><span name="sub EXPORT variable %*MAIN variable $*LANG"><code>&amp;EXPORT</code> and the language braid</span></a></h1>
+<p>The first thing we’re going to do, however, is set up a slang. It’s 
+much easier to figure out a slang when it can be played with and tested 
+while it’s being written, rather than attempting to write it all at 
+once. The first component of writing a slang is creating the &amp;EXPORT
+ function. Currently, this is the only point where a slang can hook 
+itself into the main parser.</p>
+<p>The <code>&amp;EXPORT</code> function is important because when a library is imported, with <code>use My::Module;</code>,
+ any terms that might change the state of the parser have to be imported
+ before the parser tries to parse any more of the original file. Because
+ of this, if <code>My::Module</code> defines it, <code>&amp;EXPORT</code>
+ is called from within Perl6::Grammar to specify any additional objects 
+for My::Module to export. Being called from the grammar gives us the 
+ability to also manipulate special variables inside the parser, 
+including the ones that control what’s known as "the language braid," 
+the set of mini-languages that make up the Perl 6 parser.</p>
+<pre>sub EXPORT {
+    # The alias in %*LANG of the current language,
+    # in this case $*MAIN eq “MAIN”.
+    say <strong>$*MAIN</strong>;
+
+    # Accessing the current language within the language braid
+    say <strong>%*LANG</strong>{<strong>$*MAIN</strong>}.name;
+
+    # Accessing the Perl 6 actions class
+    say <strong>%*LANG</strong>&lt;MAIN-actions&gt;.name;
+
+    # Return an empty hash, to specify that
+    # we’re not exporting anything extra
+    {}
+}
+</pre>
+<p>To get the <code>&amp;EXPORT</code> subroutine to be run, put this in a file called, e.g., <code>MySlang.pm</code>, and execute <code>perl6 -I. -e 'use MySlang;'</code> on the command line.</p>
+<p>From here, there are two paths. One path creates a whole new 
+language, like v5, and the other just augments the Perl 6 parser or 
+another slang. If you are traveling the former path, your language is 
+most likely going to have a grammar, to parse things, and an actions 
+class, to create the meaning for what was parsed. If your language’s 
+grammar has been defined as <code>grammar MyLang::Grammar</code> and the corresponding action class as <code>class MyLang::Actions</code>, these can be hooked into the parser with an <code>&amp;EXPORT</code> sub like so:</p>
+<pre>grammar MyLang::Grammar { ... }
+class   MyLang::Actions { ... }
+sub EXPORT {
+    # Let the parser know it’s a slang
+    %*LANG&lt;MyLang&gt;         <strong>:=</strong> MyLang::Grammar;
+    %*LANG&lt;MyLang-actions&gt; <strong>:=</strong> MyLang::Actions;
+    # Tell the parser to switch to “MyLang”
+    $*MAIN := “MyLang”;
+    {}
+}
+</pre>
+<p>Now, if this is saved in <code>MyLang.pm</code>, you could start writing in your language by just writing <code>use MyLang; ... </code>. Note the use of <code>:=</code> instead of <code>=</code> — <code>$*MAIN</code> and <code>%*LANG</code> are from NQP land, so binding has to be used instead of assignment.</p>
+<p>On the other hand, if you want to augment Perl 6 — say, if you want 
+to add your own quote operators or some special macros — you would use 
+Roles that are mixed-in to the original grammar and/or actions:</p>
+<pre># (helper function)
+sub slangify ($role, :$into = 'MAIN') {
+    nqp::bindkey(%*LANG, $into, %*LANG{$into}.HOW.mixin(%*LANG{$into}, $role));
+}
+role MyLang::FancyQuotes       { ... }
+role MyLang::FancyQuoteActions { ... }
+sub EXPORT {
+    slangify MyLang::FancyQuotes;
+    slangify MyLang::FancyQuoteActions, :into&lt;MAIN-actions&gt;;
+    {}
+}</pre>
+<h1 id="Slang_Grammars"><a class="u" href="#___top" title="go to top of document">Slang Grammars</a></h1>
+<p>From this point, it’s a matter of writing the grammars and actions, 
+keeping in mind how easy it is to add to a grammar category, by writing 
+the category name and then <code>:sym&lt;…&gt;</code>. For example, to add a <code>with</code> keyword to the same category that parses <code>while</code>, <code>for</code>, <code>if</code>, etc., you can add a <code>rule statement_control:sym&lt;with&gt;</code> to the role you're going to mixin to <code>Perl6::Grammar</code>. In fact, the best way to figure out how to do things when making a slang is by searching for similar situations in <a href="https://github.com/perl6/std/blob/master/STD.pm6">the official grammar</a>, or in <a href="https://github.com/rakudo/rakudo/blob/nom/src/Perl6/Grammar.nqp">the grammar actually used by Rakudo itself</a>. The advantage of the latter being that it is closer to what will actually have to be written for a slang.</p>
+<p>For example, to add fancy quotes to the language, you could write:</p>
+<pre>role MyLang::FancyQuotes {
+    token quote:sym&lt;“ ”&gt; {
+        \“ ~ \” &lt;nibble=-[”]&gt;*
+    }
+}</pre>
+<p>Another possibility is adding to a one of the sub-languages. For example, it's possible to add to the regex language.<a href="#fn-1" id="fn-ref-1">[1]</a></p>
+<pre>my role Callsame::Grammar {
+    token assertion:sym&lt;*&gt; {
+        &lt;sym&gt;
+    }
+}</pre>
+<p>This parses "<code>*</code>" in the category <code>assertion</code>, which means it'll be parsed when writing a regex like <code>/ foo &lt;*&gt; bar /</code>.</p>
+<h1 id="Slang_Actions"><a class="u" href="#___top" title="go to top of document">Slang Actions</a></h1>
+<p>Just parsing, however, isn't going to do much that's very useful. The next step is writing an actions class.</p>
+<p>First, a distinction has to be made between parse- or compile-time, and run-time.</p>
+<p>A file that <code>use</code>s your slang is parsed up to that <code>use</code>
+ statement. Then, the file that contains your slang is parsed normally, 
+and then executed. Perl 6 then returns to the original file and parses 
+the rest of it with however you have modified the parser. Then, and only
+ then, is the run-time executed, making variables from the first program
+ available, preforming computations, creating objects, calling 
+functions, and so on. You have no direct access to the run-time of the 
+calling program.</p>
+<p>How, then, can you write an action class to do anything even remotely interesting with the program?</p>
+<p>What actions classes to is create an AST, or abstract syntax tree. 
+This is where the flat, one-dimensional program is turned into a 
+structure than can be interpreted by a compiler like the JVM or <a href="http://moarvm.org/">MoarVM</a>. Rakudo uses a specific set of classes to create these trees called <code>QAST::Node</code>s. So before even writing an actions class, import this by adding to the top of your slang file:</p>
+<pre>use QAST:from&lt;NQP&gt;;</pre>
+<p>Documentation exists <a href="https://github.com/perl6/nqp/blob/master/docs/qast.markdown">in the NQP repository</a>.</p>
+<p>Actions classes have the same methods as the grammar classes. By 
+default, these methods aren't going to be called. Action methods are 
+only called when calling <code>.ast</code> or <code>.made</code> on the <a href="http://doc.perl6.org/type/Match">Match</a> object created by a regex. This will invoke the same method in the actions class and then, if a value was <code>.make</code>-ed during that time, that value will returned. To continue from the last example:</p>
+<pre>my role Callsame::Actions {
+    method assertion:sym&lt;*&gt; <strong>(Mu $/)</strong> {
+        $/.<strong>make</strong>: ...
+    }
+}
+</pre>
+<p>Keep in mind that <a href="http://doc.perl6.org/routine/%24%2F"><code>$/</code></a>, which contains the <a href="http://doc.perl6.org/type/Match">Match</a> object, is still from NQP land, so special care must be taken with it and it must be marked as being of type <a href="http://doc.perl6.org/type/Mu"><code>Mu</code></a>, since NQP classes exist outside of the normal Perl 6 type heirarchy. In actuality, it's not going to be of type <a href="http://doc.perl6.org/type/Match">Match</a>, but of type <em>NQPMatch</em>.</p>
+<h2 id="Cargo-culting_an_Actions_Class"><a class="u" href="#___top" title="go to top of document">Cargo-culting an Actions Class</a></h2>
+<p>Actually figuring out how to balance all these different factors and 
+work with the guts of Rakudo is generally the most involved part of 
+writing a slang. Because of this, if you want to write an actions class,
+ your best bet is to find similar things in the <a href="https://github.com/rakudo/rakudo">Rakudo</a> and <a href="https://github.com/perl6/nqp">NQP</a> sources, and copy what you can.</p>
+<p>For the previous example, we still have to figure out what the AST is going to look like. In this case, we're going to define <code>&lt;*&gt;</code> in a regex as calling the same regex or method, but one level up on the heirarchy. So if you overwrite a regex with a <a href="http://doc.perl6.org/routine/but">mixin</a>, the original regex can still be matched against by the new one.</p>
+<p>Looking at the code for <a href="https://github.com/rakudo/rakudo/blob/nom/src/Perl6/Actions.nqp#L7533">other methods of the <code>assertion</code> category</a>, it looks like to interpolate correctly we need to make a <code>QAST::Regex</code> object that contains a <code>QAST::NodeList</code>, and has the attributes <code>:rxtype&lt;subrule&gt;, :subtype&lt;method&gt;, :node($/)</code>.<a href="#fn-2" id="fn-ref-2">[2]</a></p>
+<pre>my role Callsame::Actions {
+    method assertion:sym&lt;*&gt; (Mu $/) {
+        $/.make: <strong>QAST::Regex.new: QAST::NodeList.new(</strong>
+            ...
+        <strong>), :rxtype&lt;subrule&gt;, :subtype&lt;method&gt;, :node($/)</strong>;
+    }
+}
+</pre>
+<p>There are other methods of the <code>assertion</code> category that take a value from somewhere else and interpolate it into the regex, like <a href="https://github.com/rakudo/rakudo/blob/nom/src/Perl6/Actions.nqp#L7446"><code>assertion:sym&lt;{ }&gt;</code></a>. The basic format of this can be cargo-culted too:</p>
+<pre>my role Callsame::Actions {
+    method assertion:sym&lt;*&gt; (Mu $/) {
+        $/.make: QAST::Regex.new: QAST::NodeList.new(
+            <strong>QAST::SVal.new( :value('INTERPOLATE') ),</strong>
+            ...
+            <strong>QAST::IVal.new( :value(%*RX&lt;i&gt; ?? 1 !! 0) ),</strong>
+            <strong>QAST::IVal.new( :value($*SEQ ?? 1 !! 0) ),</strong>
+        ), :rxtype&lt;subrule&gt;, :subtype&lt;method&gt;, :node($/);
+    }
+}
+</pre>
+<p>We want to interpolate the same thing that <a href="http://doc.perl6.org/routine/callsame"><code>callsame</code></a> executes. While a higher-level interface would be nice, it looks like Rakudo's <a href="https://github.com/rakudo/rakudo/tree/nom/src/core">core setting</a> <a href="https://github.com/rakudo/rakudo/blob/nom/src/core/control.pm#L152">defines it</a> using something called <code>nqp::p6finddispatcher('callsame')</code>.</p>
+<p>Based on the <a href="https://github.com/perl6/nqp/blob/master/docs/qast.markdown">QAST docs</a> it looks like we can call the low-level <code>nqp::some_fn</code> functions using <code>QAST::Op.new( :op&lt;some_fn&gt; )</code>, and create string values with <code>QAST::SVal.new( :value&lt;some_string&gt; )</code>, so we can create a <code>QAST</code> structure representing <code>nqp::p6finddispatcher('callsame')</code> like this:</p>
+<pre>QAST::Op.new( :op&lt;p6finddispatcher&gt;, QAST::SVal.new( :value&lt;callsame&gt; ))</pre>
+<p>After we call <code>p6finddispatcher</code>, we need to figure out how to get the candidate before the current one. Investigative work leads to <a href="https://github.com/rakudo/rakudo/blob/nom/src/Perl6/Metamodel/Dispatchers.nqp"><code>Metamodel::Dispatchers</code></a>, which indicates that we need to do something like</p>
+<pre>nqp::p6finddispatcher('callsame').candidates[0]</pre>
+<p>Except that since <code>@!candidates</code> is from NQP, we can't just call <code>[0]</code> on it; according to the <a href="https://github.com/perl6/nqp/blob/master/docs/ops.markdown">nqp::ops documentation</a> we have to use <code>nqp::atpos(..., 0)</code>.</p>
+<p>Assembling these things, we get:</p>
+<pre>QAST::Op.new( :op&lt;atpos&gt;,
+    QAST::Op.new( :op&lt;callmethod&gt;, :name&lt;candidates&gt;,
+        QAST::Op.new( :op&lt;p6finddispatcher&gt;, QAST::SVal.new( :value&lt;callsame&gt; ))
+    ),
+    QAST::IVal.new( :value(1) )
+)</pre>
+<p>Putting it all together:</p>
+<pre>my role Callsame::Actions {
+    method assertion:sym&lt;*&gt; (Mu $/) {
+        $/.make: QAST::Regex.new: QAST::NodeList.new(
+            QAST::SVal.new( :value&lt;INTERPOLATE&gt; ),
+            QAST::Op.new( :op&lt;atpos&gt;,
+                QAST::Op.new( :op&lt;callmethod&gt;, :name&lt;candidates&gt;,
+                    QAST::Op.new( :op&lt;p6finddispatcher&gt;, QAST::SVal.new( :value&lt;callsame&gt; ))
+                ),
+                QAST::IVal.new( :value(1) )
+            ),
+            QAST::IVal.new( :value(%*RX&lt;i&gt; ?? 1 !! 0) ),
+            QAST::IVal.new( :value($*SEQ ?? 1 !! 0) ),
+        ), :rxtype&lt;subrule&gt;, :subtype&lt;method&gt;, :node($/);
+    }
+}
+</pre>
+
+<aside><ol start="1">
+<li><a href="#fn-ref-1" id="fn-1">[↑]</a> While some of the Regex grammar is reimplemented in <a href="https://github.com/rakudo/rakudo/blob/nom/src/Perl6/Grammar.nqp">Rakudo's Grammar.nqp</a>, most of it is defined <a href="https://github.com/perl6/nqp/blob/master/src/QRegex/P6Regex/Grammar.nqp">in the NQP repository</a>.
+ This is because of how important the regex engine is to both Rakudo and
+ NQP, since they both use it to parse themselves and for NQP to parse 
+Rakudo </li>
+<li><a href="#fn-ref-2" id="fn-2">[↑]</a> <code>:node($/)</code> isn't 
+strictly neccessary, but it's good to have. It generally is used by 
+errors to give a report of where in the file an error happened, which 
+helps with debugging </li>
+</ol></aside>
+
+</div>
+</div>
+<div id="footer-wrapper">
+<div id="footer" class="pretty-box yellow">
+
+        <p>             Generated on 2014-11-14T14:05:30-0500 by hand, using htmlify.p6 from            <a href="https://github.com/perl6/doc">perl6/doc on github</a></p>
+        <p>
+            The Camelia image is copyright 2009 by Larry Wall.
+        </p>
+    
+</div>
+</div>
+
+
+
+<ul style="z-index: 1; top: 0px; left: 0px; display: none;" aria-activedescendant="ui-active-menuitem" role="listbox" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>
