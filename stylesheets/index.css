@@ -1,37 +1,70 @@
 body {
     background-color: #D9D9DB;
+    height: 100%;
+    margin: 0em;
 }
-a { color: inherit; text-decoration: none }
-small { font-size: 0.4em; }
-ms { /* more-small */
-    font-size: 0.5em;
-    letter-spacing: -0.1em;
-    vertical-align: middle;
-    text-decoration: underline;
+a { color: inherit; text-decoration: none; }
+a:hover { color: black; }
+ul {
+    font-size: 0.4em;
+    display: inline-block;
+    list-style: none;
+    font-weight: 400;
 }
-#me small { color: grey; }
-#me small a { font-weight: 400; }
-#me small a:hover { color: black; }
-#content {
+ul li:before {
+    content: "⇒";
+    font-size: 0.8em;
+    display: block;
+    margin-left: -1.2em;
+    max-width: 0;
+    max-height: 0;
+}
+.centered {
     position: absolute;
     top: 50%;
     width: 100%;
     visibility: visible;
-    overflow: none;
 }
-#me {
+.centered-text {
     font-family: 'Lato', sans-serif;
     font-style: italic;
     font-weight: 300;
     font-size: 4em;
     text-align: center;
-
+}
+.clip-page {
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0em;
+    padding 0em;
     position: absolute;
+}
+.center-link {
+    position: relative;
     height: 1.5em;
-    width: 7em;
-    top: -0.75em;
+    width: 50%;
+    top: -0.75em; /* -height/2 */
     left: 50%;
-    margin-left: -3.5em;
+    margin-left: -25%; /* -width/2 */
+}
+#toc {
+    display: inline-block;
+    color: grey;
+    line-height: 1.3em;
+    margin-right: 1.2em;
+}
+sc { /* small-caps */
+    /* TODO: Auto-gen this/play with css
+     * to do this automatically with text
+     * that has an, e.g., ".title" class
+     */
+    font-size: 0.5em;
+    letter-spacing: -0.1em;
+    vertical-align: middle;
+    text-decoration: underline;
 }
 #orbit {
     position: absolute;
